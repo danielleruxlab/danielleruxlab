@@ -135,9 +135,14 @@ header{
 
 /* Extra space after the final opportunities section (Postdocs) */
 .opps .opp-group:last-of-type{
-  margin-bottom:32px; /* increase as desired */
+  margin-bottom:60px; /* increase as desired */
 }
 
+/* Add space after the address block in Contact page */
+.contact-list address{
+  display:block;
+  margin-bottom:60px; /* adjust as needed */
+}
 
 /* ---------- Figures / Images ---------- */
 figure{ margin:0; }
