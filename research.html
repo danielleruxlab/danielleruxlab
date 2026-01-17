@@ -1,68 +1,315 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Research | Rux Lab</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rux Lab | Research</title>
+  <meta name="description" content="Research in the Rux Lab: synovial joint development, articular cartilage morphogenesis, and osteoarthritis." />
 
-<style>
-:root{
-  --accent:#b03060;        /* dark pink */
-  --text:#1a1a1a;
-  --muted:#555;
-  --border:#e5e5e5;
-  --bg:#ffffff;
-  --max:900px;
-}
+  <style>
+    :root{
+      --accent:#b03060;        /* dark pink */
+      --text:#1a1a1a;
+      --muted:#555;
+      --border:#e5e5e5;
+      --bg:#ffffff;
+      --max:900px;
+    }
 
-*{box-sizing:border-box;}
+    *{box-sizing:border-box;}
 
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  color:var(--text);
-  background:var(--bg);
-  line-height:1.6;
-}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.6;
+    }
 
-a{
-  color:var(--accent);
-  text-decoration:none;
-}
-a:hover{ text-decoration:underline; }
+    a{
+      color:var(--accent);
+      text-decoration:none;
+    }
+    a:hover{ text-decoration:underline; }
 
-/* ---------- Header ---------- */
-header{
-  border-bottom:1px solid var(--border);
-}
-.wrap{
-  max-width:var(--max);
-  margin:0 auto;
-  padding:18px 20px;
-}
-.nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:14px;
-}
-  .brand{
-    font-weight:700;
-    font-size:32px;
-    color:var(--accent);
-}
-.menu{
-  list-style:none;
-  display:flex;
-  gap:18px;
-  padding:0;
-  margin:0;
-}
-.menu a{
-  color:var(--text);
-  font-weight:500;
-}
-.menu a[aria-current="page"]{
-  color:var(--accent);
-}
+    /* ---------- Header ---------- */
+    header{
+      border-bottom:1px solid var(--border);
+    }
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:18px 20px;
+    }
+    .nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:14px;
+    }
+    .brand{
+      font-size:24px;        /* larger lab name */
+      font-weight:700;
+      color:var(--accent);  /* dark pink */
+    }
+    .menu{
+      list-style:none;
+      display:flex;
+      gap:18px;
+      padding:0;
+      margin:0;
+    }
+    .menu a{
+      color:var(--text);
+      font-weight:500;
+    }
+    .menu a[aria-current="page"]{
+      color:var(--accent);
+    }
+
+    /* ---------- Page content ---------- */
+    .lede{
+      color:var(--muted);
+      font-size:18px;
+      margin-top:6px;
+    }
+
+    .section{
+      margin-top:20px;
+      padding-top:8px;
+      border-top:1px solid #f0f0f0;
+    }
+    .section h2{
+      margin:10px 0 8px;
+      font-size:20px;
+    }
+    .section p{
+      margin:8px 0;
+    }
+    .kicker{
+      display:inline-block;
+      font-size:12px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:6px;
+    }
+
+    /* Cards */
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+      gap:14px;
+      margin:12px 0 6px;
+    }
+    .card{
+      border:1px solid var(--border);
+      border-radius:10px;
+      padding:14px;
+      background:#fff;
+    }
+    .card h3{
+      margin:0 0 6px;
+      font-size:16px;
+    }
+    .card p{
+      margin:0;
+      color:#333;
+      font-size:14px;
+    }
+
+    /* Image + text row */
+    .feature{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+      margin:12px 0 6px;
+      align-items:start;
+    }
+    @media (min-width: 720px){
+      .feature{
+        grid-template-columns: 320px 1fr;
+        gap:18px;
+      }
+    }
+    .feature img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      border-radius:10px;
+      display:block;
+      background:#f2f2f2;
+      border:1px solid var(--border);
+    }
+    .bullets{
+      margin:10px 0 0;
+      padding-left:18px;
+      color:#333;
+    }
+    .bullets li{ margin:6px 0; }
+
+    hr{
+      border:0;
+      border-top:1px solid #e6e6e6;
+      margin:18px 0 14px;
+    }
+
+    footer{
+      font-size:14px;
+      color:#444;
+    }
+
+    .cta{
+      display:inline-block;
+      margin-top:8px;
+      padding:10px 12px;
+      border:1px solid var(--accent);
+      border-radius:10px;
+      color:var(--accent);
+      font-weight:600;
+    }
+    .cta:hover{
+      text-decoration:none;
+      background:rgba(176,48,96,.06);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="nav">
+        <a class="brand" href="index.html">Rux Lab</a>
+
+        <nav aria-label="Primary">
+          <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="research.html" aria-current="page">Research</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <h1>Research</h1>
+      <p class="lede">
+        We study how developmental signaling programs build and maintain <strong>synovial joints</strong>—and how
+        disruptions in these programs contribute to <strong>osteoarthritis</strong>.
+      </p>
+
+      <section class="section" aria-labelledby="overview">
+        <span class="kicker">Overview</span>
+        <h2 id="overview">From development to lifelong tissue health</h2>
+
+        <div class="feature">
+          <!-- Optional image: add something like assets/img/research-overview.jpg -->
+          <img src="assets/img/research-overview.jpg" alt="Articular cartilage and synovial joint tissues (placeholder image)" />
+          <div>
+            <p>
+              Synovial joints must form correctly during development, mature after birth, and remain durable under
+              decades of mechanical load. Our lab investigates how spatial and temporal signaling cues pattern
+              joint tissues (cartilage, synovium, and associated structures) and how altered signaling predisposes
+              joints to degeneration.
+            </p>
+            <ul class="bullets">
+              <li><strong>Development:</strong> how joints and their tissues are specified and patterned.</li>
+              <li><strong>Postnatal maturation:</strong> how articular cartilage architecture and zonation emerge.</li>
+              <li><strong>Disease:</strong> how dysregulated pathways drive osteoarthritis onset and progression.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="themes">
+        <span class="kicker">Research themes</span>
+        <h2 id="themes">What we work on</h2>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Synovial joint development</h3>
+            <p>
+              How joint boundaries and synovial tissues are patterned, and how early developmental decisions influence
+              tissue organization later in life.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Articular cartilage morphogenesis</h3>
+            <p>
+              Mechanisms that build postnatal cartilage architecture, including zonal organization and transitions
+              that support long-term function.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Osteoarthritis pathogenesis</h3>
+            <p>
+              How disrupted signaling and tissue architecture contribute to degeneration, with the goal of identifying
+              actionable nodes for prevention or repair.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="approaches">
+        <span class="kicker">Approaches</span>
+        <h2 id="approaches">How we do it</h2>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Genetics & mouse models</h3>
+            <p>
+              Tissue- and time-specific perturbations to test how developmental pathways shape postnatal cartilage and joint health.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Histology & spatial biology</h3>
+            <p>
+              Quantitative tissue phenotyping, molecular localization, and spatial readouts to connect signaling to structure.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Transcriptomics</h3>
+            <p>
+              Bulk and single-cell/-nucleus strategies to map pathway states across time, space, and disease.
+            </p>
+          </article>
+        </div>
+
+        <p style="margin-top:10px;">
+          Interested in the details? See our <a href="publications.html">Publications</a> for recent work and themes.
+        </p>
+      </section>
+
+      <section class="section" aria-labelledby="join">
+        <span class="kicker">Join us</span>
+        <h2 id="join">Opportunities</h2>
+        <p>
+          We’re always excited to meet motivated trainees who enjoy developmental biology, tissue organization, and
+          mechanistic questions with biomedical relevance.
+        </p>
+        <p>
+          <a class="cta" href="contact.html">Contact the lab</a>
+        </p>
+      </section>
+
+      <hr />
+
+      <footer>
+        © <span id="year"></span> Danielle Rux Lab | Synovial Joint Development &amp; Disease
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // Update year automatically
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
