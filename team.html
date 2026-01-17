@@ -1,1 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Team | Rux Lab</title>
 
+<style>
+:root{
+  --accent:#b03060;        /* dark pink */
+  --text:#1a1a1a;
+  --muted:#555;
+  --border:#e5e5e5;
+  --bg:#ffffff;
+  --max:900px;
+}
+
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.6;
+}
+
+a{
+  color:var(--accent);
+  text-decoration:none;
+}
+a:hover{ text-decoration:underline; }
+
+/* ---------- Header ---------- */
+header{
+  border-bottom:1px solid var(--border);
+}
+.wrap{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:18px 20px;
+}
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:14px;
+}
+  .brand{
+    font-weight:700;
+    font-size:32px;
+    color:var(--accent);
+}
+.menu{
+  list-style:none;
+  display:flex;
+  gap:18px;
+  padding:0;
+  margin:0;
+}
+.menu a{
+  color:var(--text);
+  font-weight:500;
+}
+.menu a[aria-current="page"]{
+  color:var(--accent);
+}
