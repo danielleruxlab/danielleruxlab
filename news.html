@@ -32,6 +32,28 @@ reorder the news by date <!doctype html>
       color:var(--muted);
       margin:0 0 10px;
     }
+    .news-header{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  gap:8px;
+  margin-bottom:6px;
+}
+
+.news-header h2{
+  margin:0;
+}
+
+.news-meta{
+  margin:0;
+  font-size:13px;
+  color:var(--muted);
+}
+
+.news-body{
+  margin-top:8px;
+}
+
     .tag{
       display:inline-block;
       border:1px solid var(--border);
@@ -143,7 +165,10 @@ reorder the news by date <!doctype html>
   </li>
 
   <!-- OLDEST -->
-  <li class="news-item">
+<li class="news-item">
+
+  <!-- TOP LINE -->
+  <div class="news-header">
     <h2>
       The Rux Lab is Born!
       <span class="tag">Announcement</span>
@@ -151,22 +176,29 @@ reorder the news by date <!doctype html>
     <p class="news-meta">
       <time datetime="2023-11">November 2023</time>
     </p>
+  </div>
+
+  <!-- IMAGES DIRECTLY BELOW THE TOP LINE -->
+  <div class="news-images">
+    <img
+      src="assets/img/news/lab-launch1.jpg"
+      alt="Rux Lab opening at UConn Health"
+    />
+    <img
+      src="assets/img/news/lab-launch2.jpg"
+      alt="Rux Lab opening at UConn Health"
+    />
+  </div>
+
+  <!-- BODY TEXT -->
+  <div class="news-body">
     <p>
       We’re excited to share updates on our research here!
     </p>
+  </div>
 
-    <!-- Images appear BELOW the feature text -->
-    <div class="news-images">
-      <img
-        src="assets/img/news/lab-launch1.jpg"
-        alt="Rux Lab opening at UConn Health"
-      />
-      <img
-        src="assets/img/news/lab-launch2.jpg"
-        alt="Rux Lab opening at UConn Health"
-      />
-    </div>
-  </li>
+</li>
+
 
 </ul>
 
