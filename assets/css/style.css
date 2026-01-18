@@ -287,6 +287,10 @@ footer{
   color:#444;
 }
 
+<footer>
+© <span id="year"></span> Danielle Rux Lab | Synovial Joint Development &amp; Disease
+</footer>
+
 /* ---------- Small screens ---------- */
 @media (max-width:520px){
   .menu{ gap:12px; }
