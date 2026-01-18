@@ -8,7 +8,7 @@
 
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <!-- News-page-only styles (Sinder-style layout) -->
+  <!-- News-page-only styles -->
   <style>
     .news-list{
       list-style:none;
@@ -61,6 +61,14 @@
       border-radius:8px;
       background:#f2f2f2;
       border:1px solid var(--border);
+      cursor: zoom-in;
+    }
+
+    @media (max-width:600px){
+      .news-images img{
+        width:100%;
+        height:180px;
+      }
     }
 
     .tag{
@@ -74,11 +82,37 @@
       vertical-align:middle;
     }
 
-    @media (max-width:600px){
-      .news-images img{
-        width:100%;
-        height:180px;
-      }
+    /* ---------- LIGHTBOX ---------- */
+    .lightbox{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .lightbox.open{
+      display: flex;
+    }
+
+    .lightbox img{
+      max-width: 95%;
+      max-height: 95%;
+      border-radius: 10px;
+      background: #fff;
+    }
+
+    .lightbox::after{
+      content: "×";
+      position: absolute;
+      top: 20px;
+      right: 26px;
+      font-size: 36px;
+      color: #fff;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -104,61 +138,47 @@
 
     <main>
       <h1>News</h1>
-      <p class="lede">
-        Lab updates, announcements, and highlights.
-      </p>
+      <p class="lede">Lab updates, announcements, and highlights.</p>
 
-      <ul class="news-list" aria-label="News posts">
+      <ul class="news-list">
 
-        <!-- NEWEST -->
         <li class="news-item">
-          <p class="news-date">
-            <time datetime="2026-01-10">January 2026</time>
-          </p>
-
+          <p class="news-date"><time datetime="2026-01-10">January 2026</time></p>
           <h2 class="news-title">
             Recruiting trainees for rotations and research experiences
             <span class="tag">Opportunities</span>
           </h2>
-
           <p class="news-body">
-            Interested in joining the lab? We welcome motivated undergraduates, graduate student rotations, and postdocs.
+            Interested in joining the lab? We welcome motivated undergraduates,
+            graduate student rotations, and postdocs.
             See the <a href="contact.html">Contact</a> page for what to include when reaching out.
           </p>
         </li>
 
         <li class="news-item">
-          <p class="news-date">
-            <time datetime="2025-12-15">December 2025</time>
-          </p>
-
+          <p class="news-date"><time datetime="2025-12-15">December 2025</time></p>
           <h2 class="news-title">
             Lab highlight: mapping cartilage zonal organization
             <span class="tag">Research</span>
           </h2>
-
           <p class="news-body">
-            We’re developing approaches to understand how developmental signaling programs shape postnatal articular
-            cartilage architecture and how these patterns relate to disease vulnerability.
+            We’re developing approaches to understand how developmental signaling
+            programs shape postnatal articular cartilage architecture and how these
+            patterns relate to disease vulnerability.
           </p>
         </li>
 
-        <!-- OLDEST -->
         <li class="news-item">
-          <p class="news-date">
-            <time datetime="2023-11">November 2023</time>
-          </p>
-
+          <p class="news-date"><time datetime="2023-11">November 2023</time></p>
           <h2 class="news-title">
             The Rux Lab is Born!
             <span class="tag">Announcement</span>
           </h2>
-
           <p class="news-body">
             We’re excited to share updates on our research here!
           </p>
 
-          <div class="news-images" aria-label="Lab launch photos">
+          <div class="news-images">
             <img src="assets/img/news/lab-launch1.jpg" alt="Rux Lab opening at UConn Health" />
             <img src="assets/img/news/lab-launch2.jpg" alt="Rux Lab opening at UConn Health" />
           </div>
@@ -174,8 +194,31 @@
     </main>
   </div>
 
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <img src="" alt="" />
+  </div>
+
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = lightbox.querySelector("img");
+
+    document.querySelectorAll(".news-images img").forEach(img => {
+      img.addEventListener("click", () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add("open");
+        lightbox.setAttribute("aria-hidden", "false");
+      });
+    });
+
+    lightbox.addEventListener("click", () => {
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightboxImg.src = "";
+    });
   </script>
 </body>
 </html>
